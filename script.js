@@ -1,38 +1,3 @@
-// ===== Landing animation overlay =====
-(function () {
-  var landing = document.getElementById('landing');
-  if (!landing) return;
-
-  var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (rm) {
-    landing.remove();
-    document.documentElement.classList.remove('is-locked');
-    return;
-  }
-
-  function dismiss() {
-    if (landing.classList.contains('is-done')) return;
-    landing.classList.add('is-done');
-    document.documentElement.classList.remove('is-locked');
-    setTimeout(function () {
-      if (landing && landing.parentNode) landing.parentNode.removeChild(landing);
-    }, 750);
-  }
-
-  // Auto-dismiss after one full animation cycle (~3.8s) + a beat.
-  var dismissTimer = setTimeout(dismiss, 4200);
-
-  function skip() {
-    clearTimeout(dismissTimer);
-    dismiss();
-  }
-
-  // Skip on click, tap, or any keypress.
-  landing.addEventListener('click', skip);
-  window.addEventListener('keydown', skip, { once: true });
-  landing.addEventListener('touchstart', skip, { passive: true });
-})();
-
 // ===== Countdown to Memorial Day weekend 2026 =====
 (function () {
   var target = new Date(2026, 4, 23, 0, 0, 0).getTime();
