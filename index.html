@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boot Juice — Kicking you into the next millennium. Est. 1996.</title>
+<meta name="description" content="Boot Juice is a small-batch homemade sangria-style drink — 6 fruits, 6 fruit juices, and 100-proof Southern Comfort. Celebrating 30 years, 1996–2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bungee&family=Shrikhand&family=Ultra&family=Space+Grotesk:wght@400;500;700&family=Caveat+Brush&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=23">
+<script>
+  // Lock scroll immediately while landing is visible (skip if reduced motion)
+  (function () {
+    var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!rm) document.documentElement.classList.add('is-locked');
+  })();
+</script>
+</head>
+<body>
+
+<!-- Landing animation overlay (full-screen hero, plays once) -->
+<div class="landing" id="landing" aria-hidden="true">
+  <div class="landing-stage">
+    <div class="hero-stage halftone-light">
+
+      <div class="sun">
+        <svg class="sun-rays" viewBox="-50 -50 200 200" fill="none" stroke="#141414" stroke-width="5" stroke-linecap="round">
+          <line x1="50" y1="-40" x2="50" y2="-20"/>
+          <line x1="50" y1="120" x2="50" y2="140"/>
+          <line x1="-40" y1="50" x2="-20" y2="50"/>
+          <line x1="120" y1="50" x2="140" y2="50"/>
+          <line x1="10" y1="10" x2="22" y2="22"/>
+          <line x1="90" y1="10" x2="78" y2="22"/>
+          <line x1="10" y1="90" x2="22" y2="78"/>
+          <line x1="90" y1="90" x2="78" y2="78"/>
+        </svg>
+      </div>
+
+      <div class="cloud"></div>
+      <div class="cloud c2"></div>
+      <div class="speed-lines"></div>
+      <div class="pow">POW!</div>
+
+      <svg class="splash" viewBox="0 0 100 100" aria-hidden="true">
+        <g stroke="#141414" stroke-width="3" stroke-linejoin="round">
+          <polygon fill="#E52421" points="50,10 58,30 80,20 68,42 92,50 68,58 80,80 58,70 50,90 42,70 20,80 32,58 8,50 32,42 20,20 42,30"/>
+          <circle cx="20" cy="18" r="5" fill="#FFC72C"/>
+          <circle cx="82" cy="80" r="4" fill="#E6197F"/>
+          <circle cx="80" cy="18" r="4" fill="#2BB673"/>
+        </g>
+      </svg>
+
+      <div class="droplet" style="width:14px;height:14px;bottom:42%;left:40%;--d-mid:translate(60px,-40px);--d-end:translate(180px,60px);background:#E52421;"></div>
+      <div class="droplet" style="width:10px;height:10px;bottom:44%;left:42%;--d-mid:translate(30px,-60px);--d-end:translate(120px,40px);background:#F47A1F;"></div>
+      <div class="droplet" style="width:16px;height:16px;bottom:40%;left:44%;--d-mid:translate(90px,-80px);--d-end:translate(240px,40px);background:#E6197F;"></div>
+      <div class="droplet" style="width:8px;height:8px;bottom:46%;left:40%;--d-mid:translate(10px,-30px);--d-end:translate(60px,20px);background:#FFC72C;"></div>
+
+      <svg class="stage-bottle" viewBox="0 0 100 160" aria-hidden="true">
+        <rect x="28" y="6" width="44" height="22" fill="#2BB673" stroke="#141414" stroke-width="3"/>
+        <rect x="42" y="0" width="16" height="12" fill="#fff" stroke="#141414" stroke-width="3" rx="2"/>
+        <path d="M18 30 Q16 42 20 54 L20 140 Q20 155 35 155 L65 155 Q80 155 80 140 L80 54 Q84 42 82 30 Z"
+              fill="#E52421" stroke="#141414" stroke-width="3"/>
+        <rect x="22" y="68" width="56" height="44" fill="#FFF4E0" stroke="#141414" stroke-width="3"/>
+        <text x="50" y="90" text-anchor="middle" font-family="Ultra, serif" font-size="14" fill="#141414">BOOT</text>
+        <text x="50" y="104" text-anchor="middle" font-family="Shrikhand, serif" font-size="12" fill="#E52421">juice</text>
+        <circle cx="30" cy="128" r="4" fill="#FFC72C" stroke="#141414" stroke-width="2"/>
+        <circle cx="64" cy="132" r="5" fill="#F47A1F" stroke="#141414" stroke-width="2"/>
+        <circle cx="48" cy="44" r="3" fill="#FFC72C" stroke="#141414" stroke-width="2"/>
+      </svg>
+
+      <svg class="mascot" viewBox="0 0 280 320" aria-hidden="true">
+        <defs>
+          <linearGradient id="skin-l" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#5A3420"/>
+            <stop offset="0.55" stop-color="#6B3A22"/>
+            <stop offset="1" stop-color="#4A2A18"/>
+          </linearGradient>
+          <linearGradient id="shirt-l" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="#FFF4E0"/>
+            <stop offset="1" stop-color="#FBE9CF"/>
+          </linearGradient>
+        </defs>
+
+        <ellipse cx="140" cy="310" rx="90" ry="8" fill="#141414" opacity="0.35"/>
+
+        <g>
+          <rect x="108" y="200" width="30" height="72" fill="#1F4FC4" stroke="#141414" stroke-width="3" rx="6"/>
+          <line x1="123" y1="202" x2="123" y2="270" stroke="#141414" stroke-width="1" opacity="0.4"/>
+          <path d="M92 262 L148 262 L150 286 Q150 296 138 296 L98 296 Q86 296 86 286 L86 278 L66 284 L70 272 L86 268 Z"
+                fill="#E52421" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M96 270 Q118 284 142 270" fill="none" stroke="#FFC72C" stroke-width="1.5"/>
+          <path d="M100 278 Q118 288 140 278" fill="none" stroke="#FFC72C" stroke-width="1.5"/>
+          <rect x="86" y="296" width="4" height="12" fill="#141414"/>
+        </g>
+
+        <path d="M84 174 Q140 168 196 174 L206 228 Q140 240 74 228 Z"
+              fill="#1F4FC4" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+        <rect x="82" y="168" width="120" height="12" fill="#141414" stroke="#141414" stroke-width="2"/>
+        <rect x="134" y="169" width="14" height="10" fill="#FFC72C" stroke="#141414" stroke-width="2"/>
+
+        <g class="leg-kick">
+          <rect x="132" y="180" width="28" height="62" fill="#1F4FC4" stroke="#141414" stroke-width="3" rx="6"/>
+          <line x1="146" y1="182" x2="146" y2="240" stroke="#141414" stroke-width="1" opacity="0.4"/>
+          <path d="M118 234 L172 234 L182 258 Q184 270 170 270 L132 270 Q118 270 116 262 L115 252 L140 260 L142 248 L124 246 Z"
+                fill="#E52421" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M124 244 Q150 258 176 244" fill="none" stroke="#FFC72C" stroke-width="1.5"/>
+          <path d="M122 252 Q150 264 178 252" fill="none" stroke="#FFC72C" stroke-width="1.5"/>
+          <rect x="176" y="258" width="5" height="14" fill="#141414"/>
+        </g>
+
+        <path d="M96 104 Q140 92 184 104 L196 178 Q140 188 84 178 Z"
+              fill="url(#shirt-l)" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M96 104 Q104 118 106 134" fill="none" stroke="#141414" stroke-width="2" opacity="0.5"/>
+        <path d="M184 104 Q176 118 174 134" fill="none" stroke="#141414" stroke-width="2" opacity="0.5"/>
+
+        <g>
+          <text x="140" y="142" text-anchor="middle" font-family="Ultra, serif" font-size="20" fill="#141414">Boot</text>
+          <text x="140" y="160" text-anchor="middle" font-family="Shrikhand, serif" font-size="15" fill="#E52421" transform="rotate(-4, 140, 158)">juice</text>
+        </g>
+
+        <g>
+          <path d="M96 114 Q62 132 54 176 Q52 188 64 188 Q76 186 74 176 Q80 148 104 134"
+                fill="url(#skin-l)" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+          <circle cx="62" cy="188" r="11" fill="url(#skin-l)" stroke="#141414" stroke-width="3"/>
+          <line x1="56" y1="192" x2="68" y2="192" stroke="#141414" stroke-width="1.5" opacity="0.5"/>
+          <path d="M184 112 Q214 96 230 58 Q234 46 224 42 Q214 40 212 50 Q206 80 180 104"
+                fill="url(#skin-l)" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+          <circle cx="225" cy="46" r="11" fill="url(#skin-l)" stroke="#141414" stroke-width="3"/>
+          <line x1="220" y1="42" x2="230" y2="42" stroke="#141414" stroke-width="1.5" opacity="0.5"/>
+          <line x1="222" y1="46" x2="228" y2="46" stroke="#141414" stroke-width="1" opacity="0.4"/>
+        </g>
+
+        <path d="M126 82 L154 82 L152 108 Q140 112 128 108 Z" fill="url(#skin-l)" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+
+        <g class="head-bob">
+          <path d="M98 66 Q100 30 140 26 Q180 30 182 66 Q184 94 164 108 Q152 116 140 116 Q128 116 116 108 Q96 94 98 66 Z"
+                fill="url(#skin-l)" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M100 52 Q102 28 140 22 Q178 28 180 52 Q180 58 176 58 L104 58 Q100 58 100 52 Z"
+                fill="#1C1410" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M100 58 Q130 56 140 58 Q156 56 180 58" fill="none" stroke="#141414" stroke-width="2"/>
+          <g fill="#2a1E18">
+            <circle cx="114" cy="40" r="1.5"/>
+            <circle cx="126" cy="34" r="1.5"/>
+            <circle cx="140" cy="32" r="1.5"/>
+            <circle cx="154" cy="34" r="1.5"/>
+            <circle cx="166" cy="40" r="1.5"/>
+            <circle cx="120" cy="48" r="1.5"/>
+            <circle cx="148" cy="46" r="1.5"/>
+            <circle cx="160" cy="50" r="1.5"/>
+          </g>
+          <path d="M112 68 Q122 64 132 68" fill="#1C1410" stroke="#141414" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M148 68 Q158 64 168 68" fill="#1C1410" stroke="#141414" stroke-width="2" stroke-linejoin="round"/>
+          <g stroke="#141414" stroke-width="2.5" fill="#fff" stroke-linecap="round">
+            <path d="M114 78 Q122 74 132 78 Q122 82 114 78 Z"/>
+            <path d="M148 78 Q158 74 168 78 Q158 82 148 78 Z"/>
+          </g>
+          <circle cx="124" cy="78" r="2" fill="#141414"/>
+          <circle cx="158" cy="78" r="2" fill="#141414"/>
+          <path d="M140 82 Q138 92 136 96 Q140 100 144 96 Q142 92 140 82"
+                fill="none" stroke="#141414" stroke-width="2" stroke-linejoin="round" opacity="0.6"/>
+          <path d="M124 102 Q132 98 140 100 Q148 98 156 102 Q150 106 140 104 Q130 106 124 102 Z"
+                fill="#1C1410" stroke="#141414" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M128 110 Q140 116 152 110" fill="none" stroke="#141414" stroke-width="2.5" stroke-linecap="round"/>
+          <rect x="138" y="111" width="6" height="2" fill="#FFF4E0"/>
+          <path d="M132 112 Q140 118 148 112 Q148 120 140 122 Q132 120 132 112 Z"
+                fill="#1C1410" stroke="#141414" stroke-width="1.5"/>
+          <path d="M96 78 Q92 84 96 92 Q100 94 102 88" fill="url(#skin-l)" stroke="#141414" stroke-width="2"/>
+          <circle cx="96" cy="92" r="4" fill="none" stroke="#FFC72C" stroke-width="2.5"/>
+          <g>
+            <rect x="108" y="72" width="26" height="14" rx="3" fill="#141414" stroke="#141414" stroke-width="2"/>
+            <rect x="146" y="72" width="26" height="14" rx="3" fill="#141414" stroke="#141414" stroke-width="2"/>
+            <line x1="134" y1="78" x2="146" y2="78" stroke="#141414" stroke-width="3"/>
+            <rect x="112" y="74" width="6" height="3" fill="#FFF4E0" opacity="0.85"/>
+            <rect x="150" y="74" width="6" height="3" fill="#FFF4E0" opacity="0.85"/>
+          </g>
+        </g>
+
+        <g class="sparkle">
+          <line x1="48" y1="284" x2="28" y2="284" stroke="#FFC72C" stroke-width="4" stroke-linecap="round"/>
+          <line x1="48" y1="284" x2="34" y2="270" stroke="#FFC72C" stroke-width="4" stroke-linecap="round"/>
+          <line x1="48" y1="284" x2="34" y2="298" stroke="#FFC72C" stroke-width="4" stroke-linecap="round"/>
+        </g>
+      </svg>
+
+      <div class="ground"></div>
+    </div>
+
+    <div class="hero-corner">EST. <b>1996</b> &nbsp;/&nbsp; 30 YRS</div>
+
+    <div class="hero-badge" aria-hidden="true">
+      <svg viewBox="0 0 120 120" style="width:100%;height:100%">
+        <defs>
+          <path id="circle-path-l" d="M60,60 m-48,0 a48,48 0 1,1 96,0 a48,48 0 1,1 -96,0"/>
+        </defs>
+        <circle cx="60" cy="60" r="56" fill="#FFC72C" stroke="#141414" stroke-width="3"/>
+        <circle cx="60" cy="60" r="34" fill="#E52421" stroke="#141414" stroke-width="3"/>
+        <text font-family="Bungee, sans-serif" font-size="11" fill="#141414" letter-spacing="2">
+          <textPath href="#circle-path-l" startOffset="0">BOOT JUICE • 30 YEARS KICKING • 1996–2026 • </textPath>
+        </text>
+        <text x="60" y="58" text-anchor="middle" font-family="Ultra, serif" font-size="14" fill="#FFF4E0">BOOT</text>
+        <text x="60" y="74" text-anchor="middle" font-family="Shrikhand, serif" font-size="13" fill="#FFC72C" transform="rotate(-4, 60, 72)">juice</text>
+      </svg>
+    </div>
+
+    <div class="hero-slogan">
+      <div class="kick">
+        Kicking you<br/>into the <em>next</em><br/>millennium.
+      </div>
+      <div class="yr">'96&ndash;'26</div>
+    </div>
+  </div>
+  <div class="landing-skip">CLICK ANYWHERE TO ENTER &rarr;</div>
+</div>
+
+<div class="page">
+
+  <!-- ======================= TOP BAR ======================= -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="dots"><i></i><i></i><i></i><i></i></div>
+      <span>BOOT&nbsp;JUICE&nbsp;//&nbsp;EST.&nbsp;1996</span>
+    </div>
+    <div>30 YEARS KICKING &nbsp;•&nbsp; <span class="blink">1996 &rarr; 2026</span></div>
+  </div>
+
+  <!-- ======================= MARQUEE: LOGO + LIVE HERO ======================= -->
+  <header class="marquee" aria-label="Boot Juice masthead">
+
+    <div class="marquee-logo">
+      <div class="logo">
+        <div class="logo-row">
+          <div class="letter B" style="position:relative; display:inline-block;">
+            B
+            <svg class="boot-overlay" viewBox="0 0 100 170" aria-hidden="true">
+              <path d="
+                M 30 6 Q 28 2 40 2 Q 64 2 64 18 L 64 96
+                Q 64 104 70 108 L 84 116 Q 92 122 92 130 L 92 140
+                Q 92 148 84 148 L 70 148 Q 62 148 60 140 Q 58 136 54 136
+                L 50 140 Q 48 148 40 148 L 22 148 Q 12 148 12 140
+                L 12 130 Q 12 124 16 122 L 22 120 L 22 18 Q 22 6 30 6 Z"
+                fill="#E52421" stroke="#141414" stroke-width="4" stroke-linejoin="round"/>
+              <path d="M 44 6 Q 54 -4 62 4" fill="none" stroke="#141414" stroke-width="3" stroke-linecap="round"/>
+              <path d="M 28 16 L 28 110" stroke="#FFF4E0" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+              <path d="M 14 118 Q 38 128 62 118" fill="none" stroke="#FFC72C" stroke-width="1.5" stroke-dasharray="2 2"/>
+              <path d="M 70 128 Q 80 132 88 132" fill="none" stroke="#FFC72C" stroke-width="1.5" stroke-dasharray="2 2"/>
+              <path d="M 18 148 L 22 148 L 26 166 L 16 166 Z" fill="#141414" stroke="#141414" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M 26 148 L 88 148 L 86 152 L 28 152 Z" fill="#141414" stroke="#141414" stroke-width="2" stroke-linejoin="round"/>
+              <g stroke="#FFC72C" stroke-width="3" stroke-linecap="round">
+                <line x1="12" y1="166" x2="-4" y2="166"/>
+                <line x1="14" y1="162" x2="2" y2="152"/>
+                <line x1="14" y1="170" x2="2" y2="178"/>
+              </g>
+            </svg>
+          </div>
+          <div class="letter" style="position:relative;">
+            o
+            <div class="ocontent" aria-hidden="true">
+              <svg viewBox="0 0 60 60">
+                <g stroke="#141414" stroke-width="2">
+                  <circle cx="18" cy="30" r="5" fill="#6B2D8F"/>
+                  <circle cx="28" cy="26" r="5" fill="#6B2D8F"/>
+                  <circle cx="38" cy="30" r="5" fill="#6B2D8F"/>
+                  <circle cx="22" cy="38" r="5" fill="#6B2D8F"/>
+                  <circle cx="32" cy="40" r="5" fill="#6B2D8F"/>
+                  <path d="M28 20 Q30 14 36 16" fill="none"/>
+                  <path d="M30 16 Q36 12 42 18" fill="#2BB673"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <div class="letter" style="position:relative;">
+            o
+            <div class="ocontent" aria-hidden="true">
+              <svg viewBox="0 0 60 60">
+                <g stroke="#141414" stroke-width="2">
+                  <circle cx="30" cy="30" r="18" fill="#F47A1F"/>
+                  <g stroke="#FFF4E0" stroke-width="1.5">
+                    <line x1="30" y1="15" x2="30" y2="45"/>
+                    <line x1="15" y1="30" x2="45" y2="30"/>
+                    <line x1="20" y1="20" x2="40" y2="40"/>
+                    <line x1="40" y1="20" x2="20" y2="40"/>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <div class="letter" style="position:relative;">
+            t
+            <svg aria-hidden="true" style="position:absolute; top:-6px; right:-10px; width:clamp(24px,3vw,42px); height:auto; aspect-ratio:1;" viewBox="0 0 40 40">
+              <path d="M6 6 L34 6 L30 30 Q30 34 26 34 L14 34 Q10 34 10 30 Z" fill="#fff" stroke="#141414" stroke-width="3"/>
+              <rect x="8" y="9" width="24" height="14" fill="#E52421"/>
+              <line x1="20" y1="2" x2="20" y2="8" stroke="#141414" stroke-width="3"/>
+            </svg>
+          </div>
+        </div>
+        <div class="juice-tag">juice</div>
+        <div class="tm">&copy;'96</div>
+      </div>
+      <div class="logo-caption">Kicking you into the next millennium.</div>
+    </div>
+
+    <!-- Persistent live hero (looping mascot) -->
+    <div class="marquee-stage" aria-hidden="true">
+      <div class="hero-stage halftone-light">
+
+        <div class="sun">
+          <svg class="sun-rays" viewBox="-50 -50 200 200" fill="none" stroke="#141414" stroke-width="5" stroke-linecap="round">
+            <line x1="50" y1="-40" x2="50" y2="-20"/>
+            <line x1="50" y1="120" x2="50" y2="140"/>
+            <line x1="-40" y1="50" x2="-20" y2="50"/>
+            <line x1="120" y1="50" x2="140" y2="50"/>
+            <line x1="10" y1="10" x2="22" y2="22"/>
+            <line x1="90" y1="10" x2="78" y2="22"/>
+            <line x1="10" y1="90" x2="22" y2="78"/>
+            <line x1="90" y1="90" x2="78" y2="78"/>
+          </svg>
+        </div>
+
+        <div class="cloud"></div>
+        <div class="cloud c2"></div>
+        <div class="speed-lines"></div>
+        <div class="pow">POW!</div>
+
+        <svg class="splash" viewBox="0 0 100 100">
+          <g stroke="#141414" stroke-width="3" stroke-linejoin="round">
+            <polygon fill="#E52421" points="50,10 58,30 80,20 68,42 92,50 68,58 80,80 58,70 50,90 42,70 20,80 32,58 8,50 32,42 20,20 42,30"/>
+            <circle cx="20" cy="18" r="5" fill="#FFC72C"/>
+            <circle cx="82" cy="80" r="4" fill="#E6197F"/>
+            <circle cx="80" cy="18" r="4" fill="#2BB673"/>
+          </g>
+        </svg>
+
+        <div class="droplet" style="width:14px;height:14px;bottom:42%;left:40%;--d-mid:translate(60px,-40px);--d-end:translate(180px,60px);background:#E52421;"></div>
+        <div class="droplet" style="width:10px;height:10px;bottom:44%;left:42%;--d-mid:translate(30px,-60px);--d-end:translate(120px,40px);background:#F47A1F;"></div>
+        <div class="droplet" style="width:16px;height:16px;bottom:40%;left:44%;--d-mid:translate(90px,-80px);--d-end:translate(240px,40px);background:#E6197F;"></div>
+        <div class="droplet" style="width:8px;height:8px;bottom:46%;left:40%;--d-mid:translate(10px,-30px);--d-end:translate(60px,20px);background:#FFC72C;"></div>
+
+        <svg class="stage-bottle" viewBox="0 0 100 160">
+          <rect x="28" y="6" width="44" height="22" fill="#2BB673" stroke="#141414" stroke-width="3"/>
+          <rect x="42" y="0" width="16" height="12" fill="#fff" stroke="#141414" stroke-width="3" rx="2"/>
+          <path d="M18 30 Q16 42 20 54 L20 140 Q20 155 35 155 L65 155 Q80 155 80 140 L80 54 Q84 42 82 30 Z"
+                fill="#E52421" stroke="#141414" stroke-width="3"/>
+          <rect x="22" y="68" width="56" height="44" fill="#FFF4E0" stroke="#141414" stroke-width="3"/>
+          <text x="50" y="90" text-anchor="middle" font-family="Ultra, serif" font-size="14" fill="#141414">BOOT</text>
+          <text x="50" y="104" text-anchor="middle" font-family="Shrikhand, serif" font-size="12" fill="#E52421">juice</text>
+          <circle cx="30" cy="128" r="4" fill="#FFC72C" stroke="#141414" stroke-width="2"/>
+          <circle cx="64" cy="132" r="5" fill="#F47A1F" stroke="#141414" stroke-width="2"/>
+          <circle cx="48" cy="44" r="3" fill="#FFC72C" stroke="#141414" stroke-width="2"/>
+        </svg>
+
+        <svg class="mascot" viewBox="0 0 280 320">
+          <defs>
+            <linearGradient id="skin-h" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#5A3420"/>
+              <stop offset="0.55" stop-color="#6B3A22"/>
+              <stop offset="1" stop-color="#4A2A18"/>
+            </linearGradient>
+            <linearGradient id="shirt-h" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0" stop-color="#FFF4E0"/>
+              <stop offset="1" stop-color="#FBE9CF"/>
+            </linearGradient>
+          </defs>
+          <ellipse cx="140" cy="310" rx="90" ry="8" fill="#141414" opacity="0.35"/>
+          <g>
+            <rect x="108" y="200" width="30" height="72" fill="#1F4FC4" stroke="#141414" stroke-width="3" rx="6"/>
+            <line x1="123" y1="202" x2="123" y2="270" stroke="#141414" stroke-width="1" opacity="0.4"/>
+            <path d="M92 262 L148 262 L150 286 Q150 296 138 296 L98 296 Q86 296 86 286 L86 278 L66 284 L70 272 L86 268 Z"
+                  fill="#E52421" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M96 270 Q118 284 142 270" fill="none" stroke="#FFC72C" stroke-width="1.5"/>
+            <path d="M100 278 Q118 288 140 278" fill="none" stroke="#FFC72C" stroke-width="1.5"/>
+            <rect x="86" y="296" width="4" height="12" fill="#141414"/>
+          </g>
+          <path d="M84 174 Q140 168 196 174 L206 228 Q140 240 74 228 Z"
+                fill="#1F4FC4" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+          <rect x="82" y="168" width="120" height="12" fill="#141414" stroke="#141414" stroke-width="2"/>
+          <rect x="134" y="169" width="14" height="10" fill="#FFC72C" stroke="#141414" stroke-width="2"/>
+          <g style="transform-origin: 140px 180px; animation: kick 3.8s cubic-bezier(.4,.1,.3,1) infinite;">
+            <rect x="132" y="180" width="28" height="62" fill="#1F4FC4" stroke="#141414" stroke-width="3" rx="6"/>
+            <line x1="146" y1="182" x2="146" y2="240" stroke="#141414" stroke-width="1" opacity="0.4"/>
+            <path d="M118 234 L172 234 L182 258 Q184 270 170 270 L132 270 Q118 270 116 262 L115 252 L140 260 L142 248 L124 246 Z"
+                  fill="#E52421" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M124 244 Q150 258 176 244" fill="none" stroke="#FFC72C" stroke-width="1.5"/>
+            <path d="M122 252 Q150 264 178 252" fill="none" stroke="#FFC72C" stroke-width="1.5"/>
+            <rect x="176" y="258" width="5" height="14" fill="#141414"/>
+          </g>
+          <path d="M96 104 Q140 92 184 104 L196 178 Q140 188 84 178 Z"
+                fill="url(#shirt-h)" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M96 104 Q104 118 106 134" fill="none" stroke="#141414" stroke-width="2" opacity="0.5"/>
+          <path d="M184 104 Q176 118 174 134" fill="none" stroke="#141414" stroke-width="2" opacity="0.5"/>
+          <g>
+            <text x="140" y="142" text-anchor="middle" font-family="Ultra, serif" font-size="20" fill="#141414">Boot</text>
+            <text x="140" y="160" text-anchor="middle" font-family="Shrikhand, serif" font-size="15" fill="#E52421" transform="rotate(-4, 140, 158)">juice</text>
+          </g>
+          <g>
+            <path d="M96 114 Q62 132 54 176 Q52 188 64 188 Q76 186 74 176 Q80 148 104 134"
+                  fill="url(#skin-h)" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+            <circle cx="62" cy="188" r="11" fill="url(#skin-h)" stroke="#141414" stroke-width="3"/>
+            <line x1="56" y1="192" x2="68" y2="192" stroke="#141414" stroke-width="1.5" opacity="0.5"/>
+            <path d="M184 112 Q214 96 230 58 Q234 46 224 42 Q214 40 212 50 Q206 80 180 104"
+                  fill="url(#skin-h)" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+            <circle cx="225" cy="46" r="11" fill="url(#skin-h)" stroke="#141414" stroke-width="3"/>
+            <line x1="220" y1="42" x2="230" y2="42" stroke="#141414" stroke-width="1.5" opacity="0.5"/>
+            <line x1="222" y1="46" x2="228" y2="46" stroke="#141414" stroke-width="1" opacity="0.4"/>
+          </g>
+          <path d="M126 82 L154 82 L152 108 Q140 112 128 108 Z" fill="url(#skin-h)" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+          <g style="transform-origin: 140px 70px; animation: headBob 3.8s ease-in-out infinite;">
+            <path d="M98 66 Q100 30 140 26 Q180 30 182 66 Q184 94 164 108 Q152 116 140 116 Q128 116 116 108 Q96 94 98 66 Z"
+                  fill="url(#skin-h)" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M100 52 Q102 28 140 22 Q178 28 180 52 Q180 58 176 58 L104 58 Q100 58 100 52 Z"
+                  fill="#1C1410" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M100 58 Q130 56 140 58 Q156 56 180 58" fill="none" stroke="#141414" stroke-width="2"/>
+            <g fill="#2a1E18">
+              <circle cx="114" cy="40" r="1.5"/><circle cx="126" cy="34" r="1.5"/>
+              <circle cx="140" cy="32" r="1.5"/><circle cx="154" cy="34" r="1.5"/>
+              <circle cx="166" cy="40" r="1.5"/><circle cx="120" cy="48" r="1.5"/>
+              <circle cx="148" cy="46" r="1.5"/><circle cx="160" cy="50" r="1.5"/>
+            </g>
+            <path d="M112 68 Q122 64 132 68" fill="#1C1410" stroke="#141414" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M148 68 Q158 64 168 68" fill="#1C1410" stroke="#141414" stroke-width="2" stroke-linejoin="round"/>
+            <g stroke="#141414" stroke-width="2.5" fill="#fff" stroke-linecap="round">
+              <path d="M114 78 Q122 74 132 78 Q122 82 114 78 Z"/>
+              <path d="M148 78 Q158 74 168 78 Q158 82 148 78 Z"/>
+            </g>
+            <circle cx="124" cy="78" r="2" fill="#141414"/>
+            <circle cx="158" cy="78" r="2" fill="#141414"/>
+            <path d="M140 82 Q138 92 136 96 Q140 100 144 96 Q142 92 140 82"
+                  fill="none" stroke="#141414" stroke-width="2" stroke-linejoin="round" opacity="0.6"/>
+            <path d="M124 102 Q132 98 140 100 Q148 98 156 102 Q150 106 140 104 Q130 106 124 102 Z"
+                  fill="#1C1410" stroke="#141414" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M128 110 Q140 116 152 110" fill="none" stroke="#141414" stroke-width="2.5" stroke-linecap="round"/>
+            <rect x="138" y="111" width="6" height="2" fill="#FFF4E0"/>
+            <path d="M132 112 Q140 118 148 112 Q148 120 140 122 Q132 120 132 112 Z"
+                  fill="#1C1410" stroke="#141414" stroke-width="1.5"/>
+            <path d="M96 78 Q92 84 96 92 Q100 94 102 88" fill="url(#skin-h)" stroke="#141414" stroke-width="2"/>
+            <circle cx="96" cy="92" r="4" fill="none" stroke="#FFC72C" stroke-width="2.5"/>
+            <g>
+              <rect x="108" y="72" width="26" height="14" rx="3" fill="#141414" stroke="#141414" stroke-width="2"/>
+              <rect x="146" y="72" width="26" height="14" rx="3" fill="#141414" stroke="#141414" stroke-width="2"/>
+              <line x1="134" y1="78" x2="146" y2="78" stroke="#141414" stroke-width="3"/>
+              <rect x="112" y="74" width="6" height="3" fill="#FFF4E0" opacity="0.85"/>
+              <rect x="150" y="74" width="6" height="3" fill="#FFF4E0" opacity="0.85"/>
+            </g>
+          </g>
+          <g style="transform-origin: 60px 284px; animation: sparkleFlash 3.8s infinite;">
+            <line x1="48" y1="284" x2="28" y2="284" stroke="#FFC72C" stroke-width="4" stroke-linecap="round"/>
+            <line x1="48" y1="284" x2="34" y2="270" stroke="#FFC72C" stroke-width="4" stroke-linecap="round"/>
+            <line x1="48" y1="284" x2="34" y2="298" stroke="#FFC72C" stroke-width="4" stroke-linecap="round"/>
+          </g>
+        </svg>
+
+        <div class="ground"></div>
+      </div>
+
+      <div class="hero-corner">EST. <b>1996</b> &nbsp;/&nbsp; 30 YRS</div>
+    </div>
+
+  </header>
+
+  <!-- ======================= STORY ======================= -->
+  <section id="story" aria-labelledby="story-h">
+    <div class="section-head">
+      <div class="num">01 / STORY</div>
+      <h2 id="story-h">Made in a <span class="red">pot.</span> Poured by <span class="pink">hand.</span></h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="story-grid">
+      <div class="card cream">
+        <div class="label">SINCE 1996</div>
+        <div class="story-lead">
+          A mom-and-pop, small-batch <span class="red">spirited</span> beverage &mdash;
+          made the same way for <span class="magenta">thirty years.</span>
+        </div>
+        <div class="story-body">
+          <p>
+            Boot Juice started in a kitchen in 1996 with one pot, a handful of fruit, and the
+            simple idea that a drink ought to taste like somebody loved you. Three decades later,
+            it's still the same recipe, still made by the same hands.
+          </p>
+          <p>
+            We don't call ourselves premium. We don't call ourselves crafted. We muddle
+            the fruit, chill it overnight, and let it get weird. That's it. That's the whole thing.
+          </p>
+          <p style="font-family: 'Shrikhand', serif; font-size: 22px; color: var(--bj-boot-red); transform: rotate(-1deg); display: inline-block; margin-top: 8px;">
+            Kicking you into the next millennium &mdash; one gulp at a time.
+          </p>
+        </div>
+      </div>
+
+      <div class="anniversary-panel">
+        <svg class="fruit-accent fa-tl" viewBox="0 0 60 60" aria-hidden="true"><g stroke="#141414" stroke-width="2.5">
+          <circle cx="30" cy="30" r="20" fill="#F47A1F"/>
+          <g stroke="#FFF4E0" stroke-width="2">
+            <line x1="30" y1="12" x2="30" y2="48"/>
+            <line x1="12" y1="30" x2="48" y2="30"/>
+            <line x1="18" y1="18" x2="42" y2="42"/>
+            <line x1="42" y1="18" x2="18" y2="42"/>
+          </g>
+        </g></svg>
+        <svg class="fruit-accent fa-br" viewBox="0 0 60 60" aria-hidden="true"><g stroke="#141414" stroke-width="2.5">
+          <circle cx="18" cy="30" r="7" fill="#6B2D8F"/>
+          <circle cx="30" cy="26" r="7" fill="#6B2D8F"/>
+          <circle cx="42" cy="30" r="7" fill="#6B2D8F"/>
+          <circle cx="24" cy="40" r="7" fill="#6B2D8F"/>
+          <circle cx="36" cy="42" r="7" fill="#6B2D8F"/>
+          <path d="M32 18 Q36 10 44 14" fill="none"/>
+        </g></svg>
+        <div class="line">CELEBRATING</div>
+        <div class="yrs">30</div>
+        <div class="big">years kicking</div>
+        <div class="range">1996 &ndash; 2026</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= RECIPE ======================= -->
+  <section id="recipe" aria-labelledby="recipe-h">
+    <div class="section-head">
+      <div class="num">02 / THE INGREDIENTS</div>
+      <h2 id="recipe-h">Six fruits, six juices, <span class="red">one</span> kick.</h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="ingredients-panel">
+
+      <!-- 01: FRUITS -->
+      <div class="ing-row">
+        <div class="ing-label">
+          <div class="ing-step">STEP 01</div>
+          <div class="ing-name">Fruits</div>
+          <p class="ing-cap">Six fresh fruits, muddled in the pot.</p>
+        </div>
+        <div class="ing-content cream">
+          <div class="fruit-row" aria-hidden="true">
+            <svg class="fruit-icon" viewBox="0 0 60 60"><g stroke="#141414" stroke-width="2.5">
+              <circle cx="18" cy="30" r="7" fill="#6B2D8F"/>
+              <circle cx="30" cy="26" r="7" fill="#6B2D8F"/>
+              <circle cx="42" cy="30" r="7" fill="#6B2D8F"/>
+              <circle cx="24" cy="40" r="7" fill="#6B2D8F"/>
+              <circle cx="36" cy="42" r="7" fill="#6B2D8F"/>
+              <path d="M32 18 Q36 10 44 14" fill="none"/>
+            </g></svg>
+            <svg class="fruit-icon" viewBox="0 0 60 60"><g stroke="#141414" stroke-width="2.5">
+              <circle cx="30" cy="30" r="20" fill="#F47A1F"/>
+              <g stroke="#FFF4E0" stroke-width="2">
+                <line x1="30" y1="12" x2="30" y2="48"/>
+                <line x1="12" y1="30" x2="48" y2="30"/>
+                <line x1="18" y1="18" x2="42" y2="42"/>
+                <line x1="42" y1="18" x2="18" y2="42"/>
+              </g>
+            </g></svg>
+            <svg class="fruit-icon" viewBox="0 0 60 60"><g stroke="#141414" stroke-width="2.5">
+              <ellipse cx="30" cy="34" rx="14" ry="18" fill="#FFC72C"/>
+              <circle cx="30" cy="34" r="10" fill="#FFF4E0"/>
+              <g stroke="#141414" stroke-width="1.5">
+                <line x1="30" y1="24" x2="30" y2="44"/>
+                <line x1="20" y1="34" x2="40" y2="34"/>
+              </g>
+              <path d="M22 18 Q28 8 34 10 Q40 8 38 18" fill="#2BB673"/>
+            </g></svg>
+            <svg class="fruit-icon" viewBox="0 0 60 60"><g stroke="#141414" stroke-width="2.5">
+              <ellipse cx="30" cy="38" rx="14" ry="18" fill="#F4B01F"/>
+              <g stroke="#141414" stroke-width="1">
+                <line x1="18" y1="30" x2="42" y2="30"/>
+                <line x1="18" y1="40" x2="42" y2="40"/>
+                <line x1="18" y1="50" x2="42" y2="50"/>
+                <line x1="24" y1="22" x2="24" y2="56"/>
+                <line x1="36" y1="22" x2="36" y2="56"/>
+              </g>
+              <path d="M22 18 L30 6 L38 18 M26 14 L30 2 M34 14 L30 2" fill="#2BB673" stroke="#141414" stroke-width="2"/>
+            </g></svg>
+            <svg class="fruit-icon" viewBox="0 0 60 60"><g stroke="#141414" stroke-width="2.5">
+              <circle cx="30" cy="32" r="18" fill="#2BB673"/>
+              <circle cx="30" cy="32" r="11" fill="#7ED08A"/>
+              <g fill="#141414">
+                <ellipse cx="30" cy="24" rx="0.8" ry="1.4"/>
+                <ellipse cx="22" cy="30" rx="0.8" ry="1.4" transform="rotate(-30 22 30)"/>
+                <ellipse cx="38" cy="30" rx="0.8" ry="1.4" transform="rotate(30 38 30)"/>
+                <ellipse cx="26" cy="40" rx="0.8" ry="1.4" transform="rotate(-15 26 40)"/>
+                <ellipse cx="34" cy="40" rx="0.8" ry="1.4" transform="rotate(15 34 40)"/>
+              </g>
+            </g></svg>
+            <svg class="fruit-icon" viewBox="0 0 60 60"><g stroke="#141414" stroke-width="2.5">
+              <path d="M14 24 Q14 10 30 10 Q46 10 46 24 L42 52 Q42 54 30 54 Q18 54 18 52 Z" fill="#E52421"/>
+              <path d="M18 22 Q22 18 28 22" fill="none" stroke="#FFF4E0" stroke-width="2"/>
+              <path d="M26 10 Q30 2 34 10" fill="#2BB673"/>
+            </g></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02: JUICES -->
+      <div class="ing-row">
+        <div class="ing-label">
+          <div class="ing-step">STEP 02</div>
+          <div class="ing-name">Juices</div>
+          <p class="ing-cap">Six fruit juices, poured in by hand. No syrups, no mixes.</p>
+        </div>
+        <div class="ing-content white">
+          <div class="juice-list">
+            <span class="chip orange" style="--r:-3deg;">ORANGE</span>
+            <span class="chip yellow" style="--r:2deg;">PINEAPPLE</span>
+            <span class="chip grape" style="--r:-2deg;">GRAPE</span>
+            <span class="chip magenta" style="--r:3deg;">CRANBERRY</span>
+            <span class="chip kiwi" style="--r:-4deg;">APPLE</span>
+            <span class="chip cobalt" style="--r:4deg;">PEACH</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03: THE KICK -->
+      <div class="ing-row">
+        <div class="ing-label">
+          <div class="ing-step">STEP 03</div>
+          <div class="ing-name">The Kick</div>
+          <p class="ing-cap">Stirred in last. The whole pot earns its name here.</p>
+        </div>
+        <div class="ing-content sangria">
+          <div class="proof-line">
+            <span class="proof-num">100&deg;</span>
+            <span class="proof-tag">proof</span>
+          </div>
+          <div class="soco-brand">Southern Comfort.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================= CONTACT ======================= -->
+  <section id="contact" aria-labelledby="contact-h">
+    <div class="section-head">
+      <div class="num">04 / SAY HI</div>
+      <h2 id="contact-h">Drop a <span class="pink">line.</span></h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="contact-grid">
+      <div class="card">
+        <div class="label">GET IN TOUCH</div>
+        <h3 style="font-family:'Shrikhand', serif; color: var(--bj-boot-red); font-size: 36px; transform: rotate(-1deg); display: inline-block; margin: 8px 0 4px;">
+          Know a Boot Juice fan?
+        </h3>
+        <p style="margin-bottom: 8px;">
+          Send us a note &mdash; old friends, new friends, anybody who wants to say the recipe hits.
+          This is a small family operation, so replies are from a real person.
+        </p>
+        <form class="contact-form" action="mailto:hello@bootjuice.example" method="post" enctype="text/plain" onsubmit="return handleContact(event)">
+          <label for="name">NAME</label>
+          <input id="name" name="name" type="text" required autocomplete="name">
+          <label for="email">EMAIL</label>
+          <input id="email" name="email" type="email" required autocomplete="email">
+          <label for="msg">MESSAGE</label>
+          <textarea id="msg" name="message" rows="4" required></textarea>
+          <button type="submit" class="btn red">Send it &rarr;</button>
+          <div class="form-note" id="form-note">We'll never share your email. Pinky swear.</div>
+        </form>
+      </div>
+
+      <div class="card cream">
+        <div class="label">FIND US</div>
+        <h3>Word of mouth, mostly.</h3>
+        <p>
+          Boot Juice has been kept alive for 30 years by one thing: people telling other people.
+          If you've had a cup, you know whats up!
+        </p>
+        <div style="display:flex; flex-wrap: wrap; gap: 12px; margin-top: 16px;">
+          <span class="chip" style="--r:-3deg;">FAMILY</span>
+          <span class="chip kiwi" style="--r:2deg;">FRIENDS</span>
+          <span class="chip grape" style="--r:-2deg;">PORCH PARTIES</span>
+          <span class="chip magenta" style="--r:4deg;">COOKOUTS</span>
+        </div>
+        <p style="margin-top: 18px; font-family: 'Shrikhand', serif; font-size: 20px; color: var(--bj-boot-red); transform: rotate(-1deg); display: inline-block;">
+          &mdash; made with love, in small pots &mdash;
+        </p>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <b>A NOTE FROM THE KITCHEN</b>
+      This site is for <em>information purposes only.</em> Boot Juice is a homemade, small-production
+      recipe shared with family and friends. Nothing here is an offer to sell alcoholic beverages.
+      Please drink responsibly, be 21+, and don't operate heavy machinery &mdash; a kickflip is probably fine though.
+    </div>
+  </section>
+
+  <!-- ======================= FRUIT GARNISH ======================= -->
+  <div class="fruit-garnish" aria-hidden="true">
+    <svg class="fruit-icon" viewBox="0 0 60 60" style="--r:-8deg;"><g stroke="#141414" stroke-width="2.5">
+      <circle cx="18" cy="30" r="7" fill="#6B2D8F"/>
+      <circle cx="30" cy="26" r="7" fill="#6B2D8F"/>
+      <circle cx="42" cy="30" r="7" fill="#6B2D8F"/>
+      <circle cx="24" cy="40" r="7" fill="#6B2D8F"/>
+      <circle cx="36" cy="42" r="7" fill="#6B2D8F"/>
+      <path d="M32 18 Q36 10 44 14" fill="none"/>
+    </g></svg>
+    <svg class="fruit-icon" viewBox="0 0 60 60" style="--r:6deg;"><g stroke="#141414" stroke-width="2.5">
+      <circle cx="30" cy="30" r="20" fill="#F47A1F"/>
+      <g stroke="#FFF4E0" stroke-width="2">
+        <line x1="30" y1="12" x2="30" y2="48"/>
+        <line x1="12" y1="30" x2="48" y2="30"/>
+        <line x1="18" y1="18" x2="42" y2="42"/>
+        <line x1="42" y1="18" x2="18" y2="42"/>
+      </g>
+    </g></svg>
+    <svg class="fruit-icon" viewBox="0 0 60 60" style="--r:-4deg;"><g stroke="#141414" stroke-width="2.5">
+      <ellipse cx="30" cy="34" rx="14" ry="18" fill="#FFC72C"/>
+      <circle cx="30" cy="34" r="10" fill="#FFF4E0"/>
+      <g stroke="#141414" stroke-width="1.5">
+        <line x1="30" y1="24" x2="30" y2="44"/>
+        <line x1="20" y1="34" x2="40" y2="34"/>
+      </g>
+      <path d="M22 18 Q28 8 34 10 Q40 8 38 18" fill="#2BB673"/>
+    </g></svg>
+    <svg class="fruit-icon" viewBox="0 0 60 60" style="--r:8deg;"><g stroke="#141414" stroke-width="2.5">
+      <ellipse cx="30" cy="38" rx="14" ry="18" fill="#F4B01F"/>
+      <g stroke="#141414" stroke-width="1">
+        <line x1="18" y1="30" x2="42" y2="30"/>
+        <line x1="18" y1="40" x2="42" y2="40"/>
+        <line x1="18" y1="50" x2="42" y2="50"/>
+        <line x1="24" y1="22" x2="24" y2="56"/>
+        <line x1="36" y1="22" x2="36" y2="56"/>
+      </g>
+      <path d="M22 18 L30 6 L38 18 M26 14 L30 2 M34 14 L30 2" fill="#2BB673" stroke="#141414" stroke-width="2"/>
+    </g></svg>
+    <svg class="fruit-icon" viewBox="0 0 60 60" style="--r:-6deg;"><g stroke="#141414" stroke-width="2.5">
+      <circle cx="30" cy="32" r="18" fill="#2BB673"/>
+      <circle cx="30" cy="32" r="11" fill="#7ED08A"/>
+      <g fill="#141414">
+        <ellipse cx="30" cy="24" rx="0.8" ry="1.4"/>
+        <ellipse cx="22" cy="30" rx="0.8" ry="1.4" transform="rotate(-30 22 30)"/>
+        <ellipse cx="38" cy="30" rx="0.8" ry="1.4" transform="rotate(30 38 30)"/>
+        <ellipse cx="26" cy="40" rx="0.8" ry="1.4" transform="rotate(-15 26 40)"/>
+        <ellipse cx="34" cy="40" rx="0.8" ry="1.4" transform="rotate(15 34 40)"/>
+      </g>
+    </g></svg>
+    <svg class="fruit-icon" viewBox="0 0 60 60" style="--r:4deg;"><g stroke="#141414" stroke-width="2.5">
+      <path d="M14 24 Q14 10 30 10 Q46 10 46 24 L42 52 Q42 54 30 54 Q18 54 18 52 Z" fill="#E52421"/>
+      <path d="M18 22 Q22 18 28 22" fill="none" stroke="#FFF4E0" stroke-width="2"/>
+      <path d="M26 10 Q30 2 34 10" fill="#2BB673"/>
+    </g></svg>
+  </div>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="bj-footer">
+    <div>BOOT JUICE &copy; 1996&ndash;2026 &nbsp;/&nbsp; 30 YEARS KICKING</div>
+    <div class="stars" aria-hidden="true">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+    <div>PULP ON.</div>
+  </footer>
+
+</div>
+
+<!-- ======================= FULL-WIDTH TICKER (page bottom) ======================= -->
+<div class="ticker ticker-bottom" aria-hidden="true">
+  <div class="ticker-track">
+    <span>30 YEARS KICKING</span><span class="star">&#9733;</span>
+    <span>SMALL BATCH SANGRIA</span><span class="star">&#9733;</span>
+    <span>EST. 1996</span><span class="star">&#9733;</span>
+    <span>SIX FRUITS</span><span class="star">&#9733;</span>
+    <span>SIX JUICES</span><span class="star">&#9733;</span>
+    <span>100 PROOF SOUTHERN COMFORT</span><span class="star">&#9733;</span>
+    <span>KICKING YOU INTO THE NEXT MILLENNIUM</span><span class="star">&#9733;</span>
+    <span>PULP ON</span><span class="star">&#9733;</span>
+    <span>30 YEARS KICKING</span><span class="star">&#9733;</span>
+    <span>EST. 1996</span><span class="star">&#9733;</span>
+  </div>
+</div>
+
+<script src="script.js?v=4"></script>
+</body>
+</html>
