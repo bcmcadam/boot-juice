@@ -85,12 +85,12 @@ a { color: inherit; }
   content: "";
   position: absolute;
   inset: 0;
-  background: repeating-conic-gradient(from 0deg at 22% 55%,
+  background: repeating-conic-gradient(from 0deg at 18% 22%,
     rgba(255,199,44,0.32) 0deg 8deg,
     transparent 8deg 18deg);
-  mask-image: radial-gradient(ellipse 95% 80% at 22% 55%,
+  mask-image: radial-gradient(ellipse 95% 80% at 18% 22%,
     black 22%, rgba(0,0,0,0.32) 68%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 95% 80% at 22% 55%,
+  -webkit-mask-image: radial-gradient(ellipse 95% 80% at 18% 22%,
     black 22%, rgba(0,0,0,0.32) 68%, transparent 100%);
   pointer-events: none;
   z-index: 0;
