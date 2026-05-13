@@ -167,16 +167,9 @@ a { color: inherit; }
   left: auto; right: 6%; bottom: 22%;
   transform: scaleX(-1);   /* face left */
 }
-/* Un-mirror the text on the mascot's shirt so "Boot juice" reads correctly */
-.marquee-stage .mascot text {
-  transform: scaleX(-1);
-  transform-origin: center;
-  transform-box: fill-box;
-}
-
 .marquee-stage .stage-bottle {
   width: clamp(50px, 5.6vw, 72px);
-  left: auto; right: 0; bottom: 18%;
+  left: auto; right: 0; bottom: 22%;
   animation-name: bottleLaunchLeft;
 }
 
@@ -538,7 +531,8 @@ section { margin-top: 110px; scroll-margin-top: 20px; }
 }
 .ing-content.cream { background: var(--bj-paper); }
 .ing-content.white { background: #fff; }
-.ing-content.sangria {
+.ing-content.sangria,
+.ing-content.beverage {
   background: linear-gradient(180deg, var(--bj-sangria-deep), var(--bj-sangria) 70%, var(--bj-boot-red));
   color: #fff;
   flex-direction: column;
@@ -547,7 +541,8 @@ section { margin-top: 110px; scroll-margin-top: 20px; }
   overflow: hidden;
   gap: 8px;
 }
-.ing-content.sangria::before {
+.ing-content.sangria::before,
+.ing-content.beverage::before {
   content: "";
   position: absolute; inset: 0;
   background-image: radial-gradient(rgba(255,255,255,0.13) 1.2px, transparent 1.3px);
@@ -649,6 +644,15 @@ section { margin-top: 110px; scroll-margin-top: 20px; }
 /* juice list styled as tags */
 .juice-list {
   display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px;
+}
+.juice-list.jugs { gap: 18px; align-items: flex-end; }
+.juice-jug {
+  width: clamp(64px, 7.5vw, 92px);
+  height: auto; aspect-ratio: 1;
+  flex: 0 0 auto;
+  display: block;
+  transform: rotate(var(--r, 0deg));
+  filter: drop-shadow(3px 3px 0 var(--bj-ink));
 }
 .chip {
   border: 3px solid var(--bj-ink);
