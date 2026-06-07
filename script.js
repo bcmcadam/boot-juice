@@ -52,16 +52,18 @@ function handleContact(e) {
     })
     .then(function (result) {
       if (result.ok) {
-        setNote('Thanks! Your message is on its way. We’ll be in touch.', '#E52421');
-        form.reset();
+        form.innerHTML =
+          '<div class="form-thanks">' +
+          '<h3 style="font-family:\'Shrikhand\', serif; color: var(--bj-boot-red); font-size: 36px; transform: rotate(-1deg); display: inline-block; margin: 8px 0 12px;">Message sent!</h3>' +
+          '<p>Thanks for reaching out &mdash; your note is on its way. A real person will get back to you soon.</p>' +
+          '</div>';
       } else {
         setNote((result.data && result.data.message) || 'Something went wrong. Email us at info@thebootjuice.com.', '#E52421');
+        if (btn) btn.disabled = false;
       }
     })
     .catch(function () {
       setNote('Network hiccup. Email us at info@thebootjuice.com.', '#E52421');
-    })
-    .finally(function () {
       if (btn) btn.disabled = false;
     });
 
