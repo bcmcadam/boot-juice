@@ -25,11 +25,45 @@
 })();
 
 function handleContact(e) {
+  e.preventDefault();
+  var form = e.target;
   var note = document.getElementById('form-note');
-  if (!note) return true;
-  setTimeout(function () {
-    note.textContent = 'Thanks! Your email client should open with the message ready to send.';
-    note.style.color = '#E52421';
-  }, 50);
-  return true;
+  var btn = form.querySelector('button[type="submit"]');
+
+  function setNote(msg, color) {
+    if (note) {
+      note.textContent = msg;
+      note.style.color = color;
+    }
+  }
+
+  setNote('Sending…', '#E52421');
+  if (btn) btn.disabled = true;
+
+  fetch(form.action, {
+    method: 'POST',
+    headers: { 'Accept': 'application/json' },
+    body: new FormData(form)
+  })
+    .then(function (res) {
+      return res.json().then(function (data) {
+        return { ok: res.ok, data: data };
+      });
+    })
+    .then(function (result) {
+      if (result.ok) {
+        setNote('Thanks! Your message is on its way. We’ll be in touch.', '#E52421');
+        form.reset();
+      } else {
+        setNote((result.data && result.data.message) || 'Something went wrong. Email us at info@thebootjuice.com.', '#E52421');
+      }
+    })
+    .catch(function () {
+      setNote('Network hiccup. Email us at info@thebootjuice.com.', '#E52421');
+    })
+    .finally(function () {
+      if (btn) btn.disabled = false;
+    });
+
+  return false;
 }
